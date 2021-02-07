@@ -7,3 +7,11 @@ services:
       - 27017:27017
     env_file:
       - .env
+    depends_on:
+      - broker
+
+  broker:
+    image: nats-streaming:0.20-alpine
+    command: -cid broker
+    ports:
+      - 4222:4222
