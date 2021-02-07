@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  mongo:
+    image: mongo:4.2-bionic
+    ports:
+      - 27017:27017
+    env_file:
+      - .env
