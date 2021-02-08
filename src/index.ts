@@ -14,17 +14,17 @@ const mongoDB = process.env.MONGO_DB || 'docspace';
 async function bootstrap() {
   const mongoClient = new MongoClient(mongoURL);
   await mongoClient.connect();
+  console.log('- Database connected');
 
   stan.on('connect', () => {
-    console.log('STAN Connected');
+    console.log('- Broker connected');
+    app.use(logger());
+
+    app.context.db = mongoClient.db(mongoDB);
+    app.context.broker = stan;
+
+    app.listen(port, () => console.log('\n\n=== Server Running! ===\n\n'));
   });
-
-  app.use(logger());
-
-  app.context.db = mongoClient.db(mongoDB);
-  app.context.stan = stan;
-
-  app.listen(port, () => console.log('\n\n=== Server Running! ===\n\n'));
 }
 
 bootstrap().catch(console.dir);
