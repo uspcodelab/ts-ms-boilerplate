@@ -15,3 +15,13 @@ services:
     command: -cid broker
     ports:
       - 4222:4222
+
+  app:
+    build: .
+    ports:
+      - 3000:3000
+    env_file:
+      - .env
+    depends_on:
+      - broker
+      - mongo
