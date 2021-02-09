@@ -8,11 +8,12 @@ A imagem abaixo representa a **Arquitetura do Boilerplate de Microsserviço**.
 
 Atente-se inicialmente à legenda.
 
-A documentação apresenta dois níveis de detalhamento da arquitetura:
+A documentação apresenta três níveis de detalhamento da arquitetura:
 - O cartão **Nível de Sistema** apresenta uma visualização global do sistema de back-end, contextualizando um
 potencial conjunto de serviços e como eles se conectam;
-- O cartão **Nível de Serviço** traz especificações da arquitetura de um serviço, isto é, a implementada por este
-boilerplate.
+- O cartão **Nível de Escopo de Serviço** traz especificações da arquitetura ao redor de um serviço;
+- O cartão **Nível de Serviço** especifica o programa (ou aplicação) que será implementada, exibindo o que já
+está presente e configurado no boilerplate.
 
 > nota: é possível pensar que chega-se ao nível de serviço dando um "zoom" no _escopo de serviço_ a partir do
 > nível de sistema.
