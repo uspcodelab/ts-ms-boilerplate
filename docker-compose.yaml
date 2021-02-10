@@ -22,6 +22,9 @@ services:
       - 3000:3000
     env_file:
       - .env
+    volumes:
+      - ./node_modules
+      - ./:/usr/src/app
     depends_on:
       - broker
       - mongo
